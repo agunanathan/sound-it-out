@@ -24,15 +24,42 @@
   color: white;
 }
 
+.game-container {
+  width: 800px;
+  height: 200px;
+  border: 2px solid #000000;
+  margin:auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+}
+
+.search-wrapper {
+  max-width: 800px;
+  height: 50px;
+  margin: auto;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.team-image {
+ height: 100px;
+ width: 100px;
+ padding: 16px;
+}
+
+.game-info {
+  font-size: 8;
+ }
+
+
+
+
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
