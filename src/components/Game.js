@@ -1,4 +1,6 @@
 import React from 'react'
+import teams from "@nhl-api/teams";
+console.log (teams)
 
 export default function Game() {
   return (
