@@ -9,53 +9,45 @@ function Header() {
       {/* header */}
       <nav className="header-container">
         <div className="nav-left">
-          <ul>
-            <li>
-              <NavLink
-                to="./"
-                style={({ isActive }) =>
-                  isActive
-                    ? {
-                        color: '#000000',
-                        textDecoration: 'none',
-                        fontWeight: 'bold',
-                        fontSize: '22px',
-                      }
-                    : {
-                        color: '#545e6f',
-                        textDecoration: 'none',
-                      }
-                }
-              >
-                Logo
-              </NavLink>
-            </li>
-          </ul>
+          <NavLink
+            to="./"
+            style={({ isActive }) =>
+              isActive
+                ? {
+                    color: '#000000',
+                    textDecoration: 'none',
+                    fontWeight: 'bold',
+                    fontSize: '22px',
+                  }
+                : {
+                    color: '#545e6f',
+                    textDecoration: 'none',
+                  }
+            }
+          >
+            Logo
+          </NavLink>
         </div>
         <div className="nav-right">
-          <ul>
-            <li>
-              <NavLink
-                to="./Login"
-                style={({ isActive }) =>
-                  isActive
-                    ? {
-                        textDecoration: 'none',
-                        color: '#000000',
-                        fontWeight: 'bold',
-                        fontSize: '22px',
-                      }
-                    : {
-                        color: '#545e6f',
-                        textDecoration: 'none',
-                      }
-                }
-                id="login"
-              >
-                Login
-              </NavLink>
-            </li>
-          </ul>
+          <NavLink
+            to="./Login"
+            style={({ isActive }) =>
+              isActive
+                ? {
+                    textDecoration: 'none',
+                    color: '#000000',
+                    fontWeight: 'bold',
+                    fontSize: '22px',
+                  }
+                : {
+                    color: '#545e6f',
+                    textDecoration: 'none',
+                  }
+            }
+            id="login"
+          >
+            Login
+          </NavLink>
         </div>
       </nav>
       <hr />
