@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -25,10 +30,8 @@
 }
 
 .game-container {
-  width: 800px;
-  height: 200px;
+  width: 100%;
   border: 2px solid #000000;
-  margin:auto;
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -41,25 +44,75 @@
 .search-wrapper {
   max-width: 800px;
   height: 50px;
-  margin: auto;
   background-color: #ffffff;
   color: rgb(0, 0, 0);
 }
 
 .team-image {
- height: 100px;
- width: 100px;
- padding: 16px;
+  height: 100px;
+  width: 100px;
+  padding: 16px;
 }
 
 .game-info {
   font-size: 8;
- }
-
-
-
+}
 
 .App-link {
   color: #61dafb;
 }
 
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  margin: 0;
+}
+
+.header-container ul {
+  list-style: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container-content {
+  flex: 1;
+  overflow: scroll;
+  padding: 100px 20px;
+}
+
+.container-parent {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.footer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  padding: auto 20px;
+  overflow: hidden;
+}
+
+.nav-right {
+  position: relative;
+  padding-right: 2%;
+}
+
+.nav-left {
+  position: relative;
+}

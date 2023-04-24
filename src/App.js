@@ -1,14 +1,16 @@
-import './App.css';
-import Game from './components/Game';
-import Search from './components/Search';
+import './App.css'
+import Game from './components/Game'
+import Search from './components/Search'
 
 function App() {
   return (
     <>
-      <Search />
-      <Game />
+      <div className="container-content">
+        <Search />
+        <Game />
+      </div>
     </>
   )
 }
 
-export default App;
+export default App
