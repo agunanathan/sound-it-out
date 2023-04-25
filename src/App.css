@@ -110,9 +110,21 @@ body {
 
 .nav-right {
   position: relative;
-  padding-right: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
 }
 
 .nav-left {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-left:hover,
+.nav-right:hover {
+  background-color: #f9f9f9;
 }
