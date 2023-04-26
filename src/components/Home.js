@@ -2,7 +2,9 @@ import React from 'react'
 import firebase from '../firebase_setup/firebase'
 
 class Home extends React.Component {
-  logout() {}
+  logout() {
+    firebase.auth.signOut()
+  }
   render() {
     return (
       <div style={{ textAlign: 'center' }}>

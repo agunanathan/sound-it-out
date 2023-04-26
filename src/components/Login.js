@@ -2,6 +2,35 @@ import React from 'react'
 import firebase from '../firebase_setup/firebase'
 
 class Login extends React.Component {
+  login() {
+    const email = document.querySelector('#email').value
+    const password = document.querySelector('#password').value
+
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((u) => {
+        console.log('Successfully logged in')
+      })
+      .catch((err) => {
+        console.log('Error:' + err.toString())
+      })
+  }
+
+  signUp() {
+    const email = document.querySelector('#email').value
+    const password = document.querySelector('#password').value
+
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((u) => {
+        console.log('Successfully Signed Up')
+      })
+      .catch((err) => {
+        console.log('Error:' + err.toString())
+      })
+  }
   render() {
     return (
       <div style={{ textAlign: 'center' }} className="container-content">
