@@ -4,6 +4,8 @@ import App from './App'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import Login from './components/Login'
+import Home from './components/Home'
+
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 const routing = (
@@ -16,6 +18,7 @@ const routing = (
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Home" element={<Home />} />
       </Routes>
       <Footer />
     </div>
