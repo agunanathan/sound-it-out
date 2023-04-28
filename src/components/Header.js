@@ -1,6 +1,5 @@
 import React from 'react'
 import Login from './Login'
-import Search from './Search'
 import { NavLink } from 'react-router-dom'
 
 function Header() {
