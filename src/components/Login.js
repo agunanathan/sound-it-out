@@ -1,11 +1,35 @@
 import React from 'react'
+import firebase from '../firebase_setup/firebase'
 
-function Login() {
-  return (
-    <div>
-      <h1>Login</h1>
-    </div>
-  )
+class Login extends React.Component {
+  render() {
+    return (
+      <div style={{ textAlign: 'center' }} className="container-content">
+        <h1>Login</h1>
+        <div>
+          <div>Email</div>
+          <input
+            id="email"
+            placeholder="Enter your email address"
+            type="email"
+          ></input>
+        </div>
+        <div>
+          <div>Password</div>
+          <input
+            id="password"
+            placeholder="Enter your password"
+            type="password"
+          ></input>
+        </div>
+        <button style={{ margin: '10px' }} onClick={this.login}>
+          Login
+        </button>
+        <button style={{ margin: '10px' }} onClick={this.signUp}>
+          Sign Up
+        </button>
+      </div>
+    )
+  }
 }
-
 export default Login
