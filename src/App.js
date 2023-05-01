@@ -1,14 +1,15 @@
-import './App.css'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import Temporary from './components/Temporary'
+import AppRouter from './AppRouter'
+import './App.css'
 
 function App() {
   return (
-    <>
-      <div className="container-content">
-        <Temporary />
-      </div>
-    </>
+    <div className="container-content">
+      <Router>
+        <AppRouter />
+      </Router>
+    </div>
   )
 }
 
