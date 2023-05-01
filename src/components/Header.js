@@ -1,5 +1,8 @@
 import React from 'react'
+<<<<<<< HEAD
 import Login from './Login'
+=======
+>>>>>>> 3b6aa38 (removed the horrizontal rrule)
 import { NavLink } from 'react-router-dom'
 
 function Header() {
@@ -49,7 +52,6 @@ function Header() {
           </NavLink>
         </div>
       </nav>
-      <hr />
     </div>
   )
 }
