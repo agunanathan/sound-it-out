@@ -21,26 +21,23 @@ export default function AddQuiz({ addQuiz }) {
     e.preventDefault()
     if (!message) toast.error('Please enter a title')
     else {
-      dbRef
-        .child('quiz')
-        .push()
-        .set(
-          {
-            id: uuid4(),
-            title: message,
-            completed: false,
-            status: 'active',
-            isEditing: false,
-            countStudents: 0,
-          },
-          (err) => {
-            if (err) {
-              toast.error(err)
-            } else {
-              toast.success('Quiz Added Successfully')
-            }
+      dbRef.child('quiz').push(
+        {
+          id: uuid4(),
+          title: message,
+          completed: false,
+          status: 'active',
+          isEditing: false,
+          countStudents: 0,
+        },
+        (err) => {
+          if (err) {
+            toast.error(err)
+          } else {
+            toast.success('Quiz Added Successfully')
           }
-        )
+        }
+      )
     }
     addQuiz(message)
     setMessage('')
