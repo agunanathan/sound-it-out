@@ -14,7 +14,6 @@ export default function AddQuiz({ addQuiz }) {
   const [button] = useState('Create')
   const [message, setMessage] = useState('')
   const dbRef = firebase.database().ref()
-  const newPostRef = dbRef.push()
 
   const handleSubmit = (e) => {
     // prevent default behavior of reloading forms
