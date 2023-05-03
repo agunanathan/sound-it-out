@@ -20,9 +20,8 @@ class Login extends React.Component {
   }
 
   //handles login using firebase.auth.signInWithEmailandPassword
-  login() {
-    const email = this.state.email
-    const password = this.state.password
+  login = (e) => {
+    const { email, password } = this.state
     // firebase.auth.signInWithEmailandPassword returns a promise,
     // hence, using then block to capture the event and
     // catch is used to handle any errors
@@ -38,14 +37,13 @@ class Login extends React.Component {
   }
 
   //handles signup using firebase.auth.createUserWithEmailAndPassword
-  signUp() {
+  signUp = (e) => {
     // const email = document.querySelector('#email').value
     // const password = document.querySelector('#password').value
     // firebase.auth.createUserWithEmailAndPassword returns a promise,
     // hence, using then block to capture the event and
     // catch is used to handle any errors
-    const email = this.state.email
-    const password = this.state.password
+    const { email, password } = this.state
 
     firebase
       .auth()
@@ -84,10 +82,10 @@ class Login extends React.Component {
             onChange={this.onChange}
           ></input>
         </div>
-        <button style={{ margin: '10px' }} onClick={this.login.bind(this)}>
+        <button style={{ margin: '10px' }} onClick={this.login}>
           Login
         </button>
-        <button style={{ margin: '10px' }} onClick={this.signUp.bind(this)}>
+        <button style={{ margin: '10px' }} onClick={this.signUp}>
           Sign Up
         </button>
       </div>
