@@ -34,7 +34,7 @@ export default function AddQuiz({ addQuiz }) {
   return (
     <div style={{ textAlign: 'center' }} className="container-content">
       <ToastContainer />
-      <form className="AddQuizForm">
+      <form className="AddQuizForm" onSubmit={handleSubmit}>
         <label>{label}</label>
         <span>: </span>
         <input
@@ -44,9 +44,7 @@ export default function AddQuiz({ addQuiz }) {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         ></input>
-        <button style={{ margin: '10px' }} onClick={handleSubmit}>
-          {button}
-        </button>
+        <button style={{ margin: '10px' }}>{button}</button>
       </form>
     </div>
   )
