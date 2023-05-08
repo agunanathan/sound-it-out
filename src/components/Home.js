@@ -28,7 +28,7 @@ class Home extends React.Component {
     this.setState(newQuiz)
     console.log(newQuiz)
   }
-  //To pass the vale from TodoForm to the Home, we use props
+  //To pass the vale from AddQuiz to the Home, we use props
   //html for page after login goes here
   render() {
     return (
