@@ -7,6 +7,7 @@ import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
 import 'firebase/compat/database'
 import 'react-toastify/dist/ReactToastify.css'
+import newFBKey from '../utils'
 
 export default function AddQuiz({ addQuiz }) {
   // Declare multiple state variables!
@@ -18,25 +19,29 @@ export default function AddQuiz({ addQuiz }) {
   const handleSubmit = (e) => {
     // prevent default behavior of reloading forms
     e.preventDefault()
+    const uid = newFBKey()
     if (!message) toast.error('Please enter a title')
     else {
-      dbRef.child('quiz').push(
-        {
-          id: uuid4(),
-          title: message,
-          completed: false,
-          status: 'active',
-          isEditing: false,
-          countStudents: 0,
-        },
-        (err) => {
-          if (err) {
-            toast.error(err)
-          } else {
-            toast.success('Quiz Added Successfully')
+      dbRef
+        .child('quiz')
+        .child(uid)
+        .set(
+          {
+            id: uid,
+            title: message,
+            completed: false,
+            status: 'active',
+            isEditing: false,
+            countStudents: 0,
+          },
+          (err) => {
+            if (err) {
+              toast.error(err)
+            } else {
+              toast.success('Quiz Added Successfully')
+            }
           }
-        }
-      )
+        )
     }
     addQuiz(message)
     setMessage('')
