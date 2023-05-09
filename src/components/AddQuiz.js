@@ -1,29 +1,30 @@
 import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
-import { v4 as uuid4 } from 'uuid'
 
 import firebase from '../firebase_setup/firebase'
 import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
 import 'firebase/compat/database'
 import 'react-toastify/dist/ReactToastify.css'
+import newFBKey from '../utils'
 
 export default function AddQuiz({ addQuiz }) {
   // Declare multiple state variables!
   const [label] = useState('Add a Quiz')
   const [button] = useState('Create')
-  const [message, setMessage] = useState('')
+  const [title, setTitle] = useState('')
   const dbRef = firebase.database().ref()
 
   const handleSubmit = (e) => {
     // prevent default behavior of reloading forms
     e.preventDefault()
-    if (!message) toast.error('Please enter a title')
+    const uid = newFBKey()
+    if (!title) toast.error('Please enter a title')
     else {
-      dbRef.child('quiz').push(
+      dbRef.child(`quiz/${uid}`).set(
         {
-          id: uuid4(),
-          title: message,
+          id: uid,
+          title: title,
           completed: false,
           status: 'active',
           isEditing: false,
@@ -38,8 +39,8 @@ export default function AddQuiz({ addQuiz }) {
         }
       )
     }
-    addQuiz(message)
-    setMessage('')
+    addQuiz(title, uid)
+    setTitle('')
   }
 
   return (
@@ -52,8 +53,8 @@ export default function AddQuiz({ addQuiz }) {
           type="text"
           placeholder="Quiz Name"
           id="quizName"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         ></input>
         <button style={{ margin: '10px' }}>{button}</button>
       </form>
