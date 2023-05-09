@@ -13,20 +13,20 @@ class Home extends React.Component {
     }
   }
 
-  addQuiz = (quiz) => {
+  addQuiz = (quiz, uid) => {
     // spread operator makes a copy of current quiz and we're adding id
-    const newQuiz = [
+    const updatedQuiz = [
       ...this.state.quizzes,
       {
-        id: uuid4(),
+        id: uid,
         quiz: quiz,
         completed: false,
         status: 'active',
         isEditing: false,
       },
     ]
-    this.setState(newQuiz)
-    console.log(newQuiz)
+    this.setState(updatedQuiz)
+    console.log(updatedQuiz)
   }
   //To pass the vale from AddQuiz to the Home, we use props
   //html for page after login goes here
