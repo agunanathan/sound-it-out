@@ -8,6 +8,7 @@ import Footer from './components/Footer.js'
 import Login from './components/Login'
 import Home from './components/Home'
 import './AppRouter.css'
+import Demo from './components/Demo'
 
 const AppRouter = () => {
 
@@ -53,6 +54,7 @@ const AppRouter = () => {
           />
 
           <Route path="/Home" element={<Home />} />
+          <Route path="/Demo" element={<Demo />} />
         </Routes>
         <Footer />
       </div>
